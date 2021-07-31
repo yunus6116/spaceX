@@ -1,1 +1,8 @@
 include: package:lints/recommended.yaml
+
+analyzer:
+  errors:
+    omit_local_variable_types: ignore
+linter:
+  rules:
+    constant_identifier_names: false
