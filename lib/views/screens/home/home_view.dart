@@ -12,6 +12,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class HomeView extends StatelessWidget {
+  final MissionService missionService = MissionService();
   final List<String> _choices = [
     "TR",
     "EN",
@@ -23,8 +24,6 @@ class HomeView extends StatelessWidget {
       throw 'Could not launch $url';
     }
   }
-
-  final MissionService missionService = MissionService();
 
   @override
   Widget build(BuildContext context) {
