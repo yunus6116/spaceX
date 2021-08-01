@@ -4,6 +4,8 @@
     "tr": "TR",
     "en": "EN",
     "home": {
-        "latest_mission_title": "SpaceX'in en son görevi"
+        "latest_mission_title": "SpaceX'in en son görevi",
+        "to_watch": "Transporter-2 görevini izlemek için tıklayınız",
+        "loading": "Yükleniyor, lütfen bekleyiniz."
     }
 }

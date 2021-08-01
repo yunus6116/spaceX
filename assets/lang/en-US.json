@@ -4,6 +4,8 @@
     "tr": "TR",
     "en": "EN",
     "home": {
-        "latest_mission_title": "SpaceX Latest Mission"
+        "latest_mission_title": "SpaceX Latest Mission",
+        "to_watch": "To watch Transporter-2 Mission Click",
+        "loading":"Loading at the moment, please hold the line."
     }
 }

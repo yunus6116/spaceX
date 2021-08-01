@@ -11,6 +11,8 @@ class PatchModel {
     required this.small,
     required this.large,
   });
+  @override
+  String toString() => "$small $large";
   factory PatchModel.fromJson(Map<String, dynamic> json) =>
       _$PatchModelFromJson(json);
 
