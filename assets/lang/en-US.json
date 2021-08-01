@@ -1,4 +1,8 @@
 {
+    "dark": "Dark Theme",
+    "light": "Light Theme",
+    "tr": "TR",
+    "en": "EN",
     "home": {
         "latest_mission_title": "SpaceX Latest Mission"
     }

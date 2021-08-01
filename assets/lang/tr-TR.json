@@ -1,4 +1,8 @@
 {
+    "dark": "Karanlık Tema",
+    "light": "Aydınlık Tema",
+    "tr": "TR",
+    "en": "EN",
     "home": {
         "latest_mission_title": "SpaceX'in en son görevi"
     }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../theme/light_theme.dart';
 
 class ThemeProvider extends ChangeNotifier {
@@ -9,7 +10,7 @@ class ThemeProvider extends ChangeNotifier {
   ThemeProvider(this._themeData);
 
   ThemeData get theme => _themeData;
-
+  bool get isDarkMode => themeMode == ThemeMode.dark;
   set theme(ThemeData themeData) {
     _themeData = themeData;
     notifyListeners();

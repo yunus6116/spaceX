@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:spacex/core/theme/light_theme.dart';
 import 'package:spacex/views/screens/home/home_view.dart';
-
+import 'core/theme/light_theme.dart';
 import 'core/constants/app_constants.dart';
 import 'core/provider/app_language_provider.dart';
 import 'core/provider/theme_provider.dart';
@@ -14,7 +13,7 @@ import 'core/theme/dark_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  var appLanguage = AppLanguage();
+  var appLanguage = AppLanguageProvider();
   await appLanguage.fetchLocale();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
@@ -33,17 +32,19 @@ void main() async {
                 darkModeOn ? Brightness.light : Brightness.dark),
       );
     }
-    runApp(
-      EasyLocalization(
-        supportedLocales: AppConstant.SUPPORTED_LOCALE,
-        path: AppConstant.LANG_PATH,
-        child: ChangeNotifierProvider<ThemeProvider>(
-          create: (_) =>
-              ThemeProvider(darkModeOn ? getDarkTheme() : getLightTheme()),
-          child: MyApp(),
-        ),
+    runApp(EasyLocalization(
+      supportedLocales: AppConstant.SUPPORTED_LOCALE,
+      path: AppConstant.LANG_PATH,
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<ThemeProvider>(
+            create: (_) =>
+                ThemeProvider(darkModeOn ? getDarkTheme() : getLightTheme()),
+          ),
+        ],
+        child: MyApp(),
       ),
-    );
+    ));
   });
 }
 

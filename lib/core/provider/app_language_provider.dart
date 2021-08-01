@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:spacex/core/constants/app_constants.dart';
 
-class AppLanguage extends ChangeNotifier {
-  AppLanguage();
-
-  late Locale appLocale;
+class AppLanguageProvider extends ChangeNotifier {
+  Locale? appLocale;
 
   Future<Type> fetchLocale() async {
     var prefs = await SharedPreferences.getInstance();
@@ -14,6 +13,8 @@ class AppLanguage extends ChangeNotifier {
     appLocale = Locale(prefs.getString('language_code')!);
     return Null;
   }
+
+  bool get isTR => appLocale == AppConstant.TR_LOCALE;
 
   Future<void> changeLanguage(type) async {
     var prefs = await SharedPreferences.getInstance();
